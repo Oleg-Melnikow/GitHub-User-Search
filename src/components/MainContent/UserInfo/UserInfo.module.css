@@ -1,0 +1,60 @@
+.userInfo{
+    width: 290px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-family: Inter, sans-serif;
+    color: #000000;
+    font-style: normal;
+}
+
+.userInfo img{
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+}
+
+.userName{
+    margin-top: 20px;
+    text-align: start;
+}
+
+.userName p {
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 130%;
+    margin-bottom: 10px;
+}
+
+.userName a{
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: #0064EB;
+    text-decoration: none;
+    }
+
+.follow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.follow div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.follow span{
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+}
+
+.follow img{
+    width: 24px;
+    height: 24px;
+    padding-right: 8px;
+}
