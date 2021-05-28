@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+.header {
+    background-color: #0064EB;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+}
+
+.search{
+    position: relative;
+    width: 500px;
+    height: 40px;
+    margin: 0 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+}
+
+.search input{
+    position: static;
+    height: 20px;
+    width: 100%;
+    border-radius: 6px;
+    border-color: #0064EB;
+    outline: none;
+    padding: 8px 0 8px 45px;
+    font-family: Inter, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.01em;
+    color: #000000;
+}
+
+.search img{
+    position: absolute;
+    left: 20px;
+    top: 13px;
+}
