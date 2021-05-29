@@ -7,7 +7,7 @@ import {ReposType, UserType} from "../../api/types-api";
 import {DefaultPage} from "../DefaultPage/DefaultPage";
 import {Repositories} from "./Repositories/Repositories";
 import {Empty} from "../EmptyRepos/Empty";
-import {appStatusType, RequestStatusType} from "../../bll/settingsReducer";
+import {appStatusType, loaderStatusType} from "../../bll/settingsReducer";
 import userNotFound from "../../assets/image/Union.svg";
 import userSearch from "../../assets/image/search.svg";
 import {nextPage} from "../../bll/appReducer";
@@ -17,7 +17,7 @@ export const MainContent = () => {
     const dispatch = useDispatch();
     const user = useSelector<AppStateType, UserType | null>(state => state.app.user);
     const status = useSelector<AppStateType, appStatusType>(state => state.settings.status);
-    const loader = useSelector<AppStateType, RequestStatusType>(state => state.settings.loader);
+    const loader = useSelector<AppStateType, loaderStatusType>(state => state.settings.loader);
     const repositories = useSelector<AppStateType, Array<ReposType> | null>(state => state.app.repositories);
 
     function handleChangePage(page: number) {

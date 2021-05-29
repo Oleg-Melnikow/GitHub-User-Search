@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
 .header {
     background-color: #0064EB;
     height: 72px;
@@ -7,7 +8,7 @@
     padding-left: 40px;
 }
 
-.search{
+.search {
     position: relative;
     width: 500px;
     height: 40px;
@@ -18,7 +19,7 @@
     padding: 0;
 }
 
-.search input{
+.search input {
     position: static;
     height: 20px;
     width: 100%;
@@ -37,8 +38,22 @@
     color: #000000;
 }
 
-.search img{
+.search img {
     position: absolute;
     left: 20px;
     top: 13px;
+}
+
+@media (max-width: 360px) {
+    .search img {
+        left: 10px;
+    }
+
+    .search input {
+        padding: 8px 0 8px 30px;
+    }
+
+    .header {
+        padding-left: 15px;
+    }
 }

@@ -1,3 +1,7 @@
+.wrapLoader {
+    height: calc(100vh - 72px);
+}
+
 .loader {
     position: relative;
     left: 45%;
@@ -43,4 +47,10 @@
     border-radius: 50%;
     z-index: 1;
     filter: blur(30px);
+}
+
+@media (max-width: 400px) {
+    .loader {
+        left: 30%;
+    }
 }

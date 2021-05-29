@@ -52,6 +52,7 @@ export const setUser = (userName: string): ThunkType => (dispatch) => {
         .catch(() => {
             dispatch(setUserSuccess(null));
             dispatch(setAppLoaderAC("succeeded"));
+            dispatch(setAppStatusAC("succeeded"));
         })
 }
 

@@ -1,8 +1,8 @@
-export type RequestStatusType = "loading" | "succeeded";
+export type loaderStatusType = "loading" | "succeeded";
 export type appStatusType = "start" | "succeeded";
 
 const initialState = {
-    loader: "succeeded" as RequestStatusType,
+    loader: "succeeded" as loaderStatusType,
     status: "start" as appStatusType
 }
 
@@ -20,7 +20,7 @@ export const settingsReducer = (state: settingsStateType = initialState, action:
 }
 
 export type setAppSettingsActionType = ReturnType<typeof setAppLoaderAC> | ReturnType<typeof setAppStatusAC>;
-export const setAppLoaderAC = (loader: RequestStatusType) => ({type: "APP/SETTINGS/SET-LOADER", loader} as const);
+export const setAppLoaderAC = (loader: loaderStatusType) => ({type: "APP/SETTINGS/SET-LOADER", loader} as const);
 export const setAppStatusAC = (status: appStatusType) => ({type: "APP/SETTINGS/SET-STATUS", status} as const);
 
 type ActionsType = setAppSettingsActionType;
