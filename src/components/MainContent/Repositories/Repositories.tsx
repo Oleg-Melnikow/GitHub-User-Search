@@ -1,22 +1,44 @@
-import React from "react";
-import style from "./Repositories.module.css"
-import {Repos} from "../../../api/api";
+import React, {useState} from "react";
+import style from "./Repositories.module.css";
+import ReactPaginate from 'react-paginate';
+import {ReposType} from "../../../api/types-api";
 
 type RepositoriesPropsType = {
-    repositories: Array<Repos> | null
+    repositories: Array<ReposType> | null,
+    publicRepos: number,
+    nextPage: (page: number) => void
 }
 
 export const Repositories = (props: RepositoriesPropsType) => {
 
-    return(
+    const count = Math.ceil(props.publicRepos / 4);
+    const [page, setPage] = useState<number>(1);
+
+    const handleChangePage = (selectedItem: { selected: number }) => {
+        setPage(selectedItem.selected);
+        props.nextPage(selectedItem.selected + 1);
+    }
+
+    return (
         <div className={style.repositories}>
-            <p>Repositories</p>
-            {props.repositories && props.repositories.map(res => {
-                return <div key={res.id} className={style.repository}>
-                    <a href={res.html_url} target="_blank" rel="noreferrer">{res.full_name}</a>
-                    <p>{res.description}</p>
-                </div>
-            })}
+            <p className={style.header}>Repositories ({props.publicRepos})</p>
+            <div style={{height: "500px"}}>
+                {props.repositories && props.repositories.map(res => {
+                    return <div key={res.id} className={style.repository}>
+                        <a href={res.html_url} target="_blank" rel="noreferrer">{res.name}</a>
+                        <p>{res.description}</p>
+                    </div>
+                })}
+            </div>
+            <div>
+                <ReactPaginate pageCount={count} marginPagesDisplayed={3} pageRangeDisplayed={1}
+                               containerClassName={style.paginateContainer}
+                               pageClassName={style.paginatePage}
+                               activeClassName={style.paginateActive}
+                               initialPage={page - 1}
+                               onPageChange={handleChangePage}
+                />
+            </div>
         </div>
     )
 }

@@ -1,9 +1,10 @@
 import React from "react";
-import style from "./UserInfo.module.css"
-import avatar from "../../../assets/image/avatar_default.jpg"
-import followersIcon from "../../../assets/image/shared.svg"
-import followingIcon from "../../../assets/image/provate.svg"
-import {UserType} from "../../../api/api";
+import style from "./UserInfo.module.css";
+import avatar from "../../../assets/image/avatar_default.jpg";
+import followersIcon from "../../../assets/image/shared.svg";
+import followingIcon from "../../../assets/image/provate.svg";
+import {UserType} from "../../../api/types-api";
+
 
 type UserInfoPropsType = {
     user: UserType
@@ -11,9 +12,9 @@ type UserInfoPropsType = {
 
 export const UserInfo = (props: UserInfoPropsType) => {
 
-    const {html_url, avatar_url, login, name, followers, following} = props.user
+    const {html_url, avatar_url, login, name, followers, following} = props.user;
 
-    return(
+    return (
         <main className={style.userInfo}>
             <img src={avatar_url ? avatar_url : avatar} alt="avatar"/>
             <div className={style.userName}>
