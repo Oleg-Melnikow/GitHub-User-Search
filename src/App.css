@@ -1,4 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 .App {
   text-align: center;
+  background: #E5E5E5;
+}
+
+.wrap-main{
+  height: calc(100vh - 72px);
+}
+
+.mainContent{
+  display: flex;
+  height: calc(100vh - 132px);
+  flex-direction: row;
+  padding: 30px 55px;
 }
