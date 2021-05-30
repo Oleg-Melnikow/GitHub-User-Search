@@ -22,7 +22,7 @@ export const Repositories = (props: RepositoriesPropsType) => {
     return (
         <div className={style.repositories}>
             <p className={style.header}>Repositories ({props.publicRepos})</p>
-            <div style={{height: "500px"}}>
+            <div className={style.repositoriesList}>
                 {props.repositories && props.repositories.map(res => {
                     return <div key={res.id} className={style.repository}>
                         <a href={res.html_url} target="_blank" rel="noreferrer">{res.name}</a>
@@ -35,6 +35,9 @@ export const Repositories = (props: RepositoriesPropsType) => {
                                containerClassName={style.paginateContainer}
                                pageClassName={style.paginatePage}
                                activeClassName={style.paginateActive}
+                               nextClassName={style.paginateNext}
+                               previousClassName={style.paginateNext}
+                               disabledClassName={style.paginateDisabled}
                                initialPage={page - 1}
                                onPageChange={handleChangePage}
                 />

@@ -54,8 +54,6 @@
     width: 20px;
     background: #0064EB;
     border-radius: 3px;
-    font-family: Inter, sans-serif;
-    font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 21px;
@@ -66,8 +64,6 @@
 }
 
 .paginatePage {
-    font-family: Inter, sans-serif;
-    font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 21px;
@@ -84,6 +80,20 @@
     color: #808080;
 }
 
+.paginateNext {
+    color: #555;
+    cursor: pointer;
+}
+
+.paginateDisabled {
+    color: #808080;
+    cursor: auto;
+}
+
+.repositoriesList {
+    height: 500px;
+}
+
 @media (max-width: 900px) {
     .repositories {
         margin-left: 0;
@@ -92,6 +102,10 @@
 
     .repository p {
         width: 100%;
+    }
+
+    .repositoriesList {
+        height: 100%;
     }
 }
 

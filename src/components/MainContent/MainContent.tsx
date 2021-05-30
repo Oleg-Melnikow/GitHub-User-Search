@@ -37,7 +37,6 @@ export const MainContent = () => {
                                 {
                                     repositories?.length ?
                                         <Repositories repositories={repositories} publicRepos={user.public_repos}
-
                                                       nextPage={handleChangePage}/> :
                                         <Empty/>
                                 }
